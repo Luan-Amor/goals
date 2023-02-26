@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/goals
+    username: sa
+    password: password
+  jpa:
+    show-sql: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgresSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
