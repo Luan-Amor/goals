@@ -38,5 +38,14 @@ public class GoalsControllerTest extends ContainersEnvironment {
                 .accept(MediaType.APPLICATION_JSON)
             ).andExpect(status().isCreated());
     }
+    @Test
+    void shouldThrowError_NullFieldRequired() throws Exception {
+
+        mvc.perform(post("/ui/v1/goals")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{ \"description\": \"teste description\" }")
+                .accept(MediaType.APPLICATION_JSON)
+            ).andExpect(status().isBadRequest());
+    }
 
 }

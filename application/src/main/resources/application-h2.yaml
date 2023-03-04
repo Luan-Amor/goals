@@ -8,10 +8,8 @@ spring:
     show-sql: true
     open-in-view: false
     database-platform: org.hibernate.dialect.H2Dialect
-    generate-ddl: true
-    hibernate:
-      ddl-auto: update
   h2:
     console:
       enabled: true
+
 

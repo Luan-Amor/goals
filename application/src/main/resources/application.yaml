@@ -1,9 +1,16 @@
 spring:
   profiles:
     active: h2
-
+  liquibase:
+    change-log: classpath:/db/changelogs/1.0.0/changelog-master.xml
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: "America/Sao_Paulo"
 server:
   error:
     include-message: always
     include-binding-errors: always
     include-exception: false
+

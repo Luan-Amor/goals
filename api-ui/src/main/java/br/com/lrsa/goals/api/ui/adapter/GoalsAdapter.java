@@ -4,15 +4,18 @@ import br.com.lrsa.goals.domain.dto.GoalDto;
 import br.com.lrsa.goals.domain.dto.NewGoalDto;
 import br.com.lrsa.goals.domain.dto.UpdateGoalDto;
 import br.com.lrsa.goals.domain.port.Goals;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
 @Slf4j
 @Component
 @RequiredArgsConstructor
+@Validated
 public class GoalsAdapter {
 
     private final Goals service;
@@ -25,7 +28,7 @@ public class GoalsAdapter {
         return service.findAll();
     }
 
-    public GoalDto create(NewGoalDto dto){
+    public GoalDto create(@Valid NewGoalDto dto){
         return service.createGoal(dto);
     }
 
