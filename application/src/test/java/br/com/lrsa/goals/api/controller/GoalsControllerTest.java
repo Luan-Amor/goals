@@ -1,12 +1,8 @@
 package br.com.lrsa.goals.api.controller;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import br.com.lrsa.goals.application.GoalsApplication;
 import br.com.lrsa.goals.config.ContainersEnvironment;
 import br.com.lrsa.goals.repository.GoalRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +12,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ActiveProfiles("test")
 @ExtendWith(SpringExtension.class)
@@ -27,6 +26,7 @@ public class GoalsControllerTest extends ContainersEnvironment {
 
     @Autowired
     private MockMvc mvc;
+
     @Autowired
     private GoalRepository repository;
 

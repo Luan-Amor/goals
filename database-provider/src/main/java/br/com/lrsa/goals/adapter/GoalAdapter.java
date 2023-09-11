@@ -35,8 +35,6 @@ public class GoalAdapter implements GoalsDatabase {
     @Override
     public GoalDto findById(Integer id) {
         Goal entity = repository.findById(id).get();
-//        Goal entity = repository.findById(id)
-//                .orElseThrow(() -> new ResourceNotFoundExecption("Goal not found for ID: " + id));
         return mapper.toDto(entity);
     }
 
@@ -61,6 +59,8 @@ public class GoalAdapter implements GoalsDatabase {
 
     @Override
     public void delete(Integer id) {
-        repository.findById(id).ifPresent(entity -> repository.delete(entity));
+
+        repository.findById(id)
+                .ifPresent(repository::delete);
     }
 }

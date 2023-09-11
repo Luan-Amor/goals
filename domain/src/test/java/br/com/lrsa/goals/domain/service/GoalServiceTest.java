@@ -2,6 +2,7 @@ package br.com.lrsa.goals.domain.service;
 
 import br.com.lrsa.goals.domain.dto.GoalDto;
 import br.com.lrsa.goals.domain.port.GoalsDatabase;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -21,6 +22,7 @@ public class GoalServiceTest {
     private GoalsDatabase database;
 
     @Test
+    @SneakyThrows
     public void shouldReturnAGoal_withSuccess(){
         when(database.findById(1)).thenReturn(buildGoalDto());
 

@@ -13,19 +13,19 @@
                 <constraints primaryKey="true" nullable="false" />
             </column>
             <column name="title" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="description" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="done" type="boolean">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="created_at" type="DATETIME">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
             <column name="update_at" type="DATETIME">
-                <constraints nullable="true" />
+                <constraints nullable="false" />
             </column>
         </createTable>
 
